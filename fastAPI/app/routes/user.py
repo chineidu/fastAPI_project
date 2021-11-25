@@ -1,14 +1,6 @@
 from typing import List, Dict
 from fastapi import HTTPException, Response, status, Depends, APIRouter
 from sqlalchemy.orm import Session
-import os
-import sys
-
-curr_dir = os.path.dirname(__file__)
-top_dir = os.path.abspath(os.path.join(curr_dir, ".."))
-
-# insert top_dir into system path
-sys.path.insert(0, top_dir)
 
 from database import get_db
 import models, schemas, utils, oauth2

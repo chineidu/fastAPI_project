@@ -2,17 +2,9 @@ from fastapi import APIRouter, Depends, status, HTTPException
 from fastapi.security.oauth2 import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from typing import Dict
-import sys
-import os
-
-curr_dir = os.path.dirname(__file__)
-top_dir = os.path.abspath(os.path.join(curr_dir, ".."))
-
-# insert top_dir into system path
-sys.path.insert(0, top_dir)
-
 from database import get_db
 import models, schemas, utils, oauth2
+
 
 router = APIRouter(prefix="/login", tags=["Authentication"])
 
